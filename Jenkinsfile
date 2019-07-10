@@ -9,4 +9,7 @@ node{
         bat 'mvn test'
         //It's a test.
     }
+    stage('Deploy'){
+        //TODO deploy the project
+    }
 }
