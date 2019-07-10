@@ -3,10 +3,11 @@ node{
         git 'https://github.com/Sinabow8/TestJenkins'
     }
     stage('Compile-Package'){
-        def mvnHome = tool name: 'maven 3.6.1', type: 'maven'
-        bat 'mvn clean compile'
+        bat 'javac Calculator.java'
+        bat 'javac CalculatorTest.java'
+        bat 'javac CalculatorTestRunner.java'
     }
     stage('Test'){
-        bat 'mvn test'
+        bat 'java CalculatorTestRunner.java'
     }
 }
