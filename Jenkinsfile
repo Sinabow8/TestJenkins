@@ -4,6 +4,7 @@ node{
     }
     stage('Compile-Package'){
         bat 'mvn clean compile'
+        bat 'mvn -version'
     }
     stage('Test'){
         bat 'mvn test'
