@@ -3,6 +3,7 @@ node{
         git 'https://github.com/Sinabow8/TestJenkins'
     }
     stage('Compile-Package'){
-        sh 'mvn package'
+        def mvnHome = tool name: 'maven 3.6.1', type: 'maven'
+        sh "${mvnHome}/bin/mvn package"
     }
 }
