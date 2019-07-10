@@ -1,4 +1,5 @@
 import org.junit.*;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,8 +22,10 @@ public class CalculatorTest  {
         assertEquals(3, calc.sum(2,1));
     }
 
-    @Test
-    public void divisionByZeroShouldThrowArithmeticException() throws ArithmeticException{
+    @Rule public ExpectedException exception = ExpectedException.none();
+
+    @Test (expected = ArithmeticException.class)
+    public void divisionByZeroShouldThrowArithmeticException() {
         Calculator calc = new Calculator();
         calc.divide(2,0);
     }
