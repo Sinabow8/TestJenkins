@@ -6,4 +6,7 @@ node{
         def mvnHome = tool name: 'maven 3.6.1', type: 'maven'
         bat 'mvn clean compile'
     }
+    stage('Test'){
+        bat 'mvn test'
+    }
 }
