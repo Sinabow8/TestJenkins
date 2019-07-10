@@ -1,21 +1,8 @@
-pipeline {
-    agent any
-
-    stages{
-        stage ('Compile'){
-            steps {
-                withMaven(maven : 'maven 3.6.1'){
-                    sh 'mvn clean compile'
-                }
-            }
-        }
-
-        stage ('Test'){
-            steps{
-                withMaven(maven : 'maven 3.6.1'){
-                    sh 'mvn test'
-                }
-            }
-        }
+node{
+    stage('SCM Checkout'){
+        git 'https://github.com/Sinabow8/TestJenkins'
+    }
+    stage('Compile-Package'){
+        sh 'mvn package'
     }
 }
