@@ -7,5 +7,6 @@ node{
     }
     stage('Test'){
         bat 'mvn test'
+        //It's a test.
     }
 }
